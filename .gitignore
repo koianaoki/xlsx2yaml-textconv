@@ -1,0 +1,12 @@
+*.swp
+*.DS_Store
+*~$*.xlsx
+Thumbs.db
+
+/tmp
+/log
+
+# node
+node_modules
+yarn-error.log
+package-lock.json

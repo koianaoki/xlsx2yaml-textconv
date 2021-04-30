@@ -1,0 +1,19 @@
+#!/usr/bin/env node
+
+const path = require("path");
+const program = require('commander');
+const xlsx_textconv = require("../modules/xlsx_textconv.js");
+
+program
+  .usage('[options] <file>')
+  .option('--field_row <n>', 'A field_row')
+  .option('--select_sheet_name <string(regexp)>', 'A select_sheet_name')
+  .parse(process.argv);
+
+let file = program.args[0]
+let field_row = program.field_row ? parseInt(program.field_row) : false
+let select_sheet_name = program.select_sheet_name
+
+if (file) {
+  xlsx_textconv.xlsx_to_yaml(file, field_row, select_sheet_name);
+}

@@ -1,0 +1,14 @@
+#!/usr/bin/env node
+
+(function() {
+  const difftool = require('../modules/xlsx-difftool.js');
+  const program = require('commander');
+
+  program
+  .usage('[name] [optinal command] [local] [remote]')
+  .parse(process.argv);
+
+  //name, [cmd], local, remote
+  difftool.apply(null, program.args)
+
+}).call(this);
